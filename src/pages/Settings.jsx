@@ -85,11 +85,12 @@ const Settings = () => {
       }
     }
   };
+  const twoLettersSlice = user ? user.username.slice(0, 2).toUpperCase() : "";
 
   return (
     <div className="bg-bgnetflix h-full py-24 px-8 ">
       <div className="profile-settings flex justify-center">
-        <div className="profile-pic flex justify-center items-center font-bold bg-greenuin w-[100px] h-[100px] rounded-full text-2xl">AM</div>
+        <div className="profile-pic flex justify-center items-center font-bold bg-greenuin w-[100px] h-[100px] rounded-full text-2xl">{twoLettersSlice}</div>
       </div>
       <div className="mx-auto sm:w-[60%] w-[100%] ">
         <div className=" input-settings  mt-4">

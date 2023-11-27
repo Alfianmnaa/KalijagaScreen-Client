@@ -17,7 +17,7 @@ export const Video = ({ src }) => {
         <div className="video-wrapper lg:w-[760px] lg:h-auto sm:w-[608px] sm:h-auto sm:border-[15px] border-[8px] border-greenuin ">
           <video
             src={src} // Make sure src is provided
-            className="w-full lg:w-[760px] lg:h-auto  sm:w-[608px] sm:h-auto "
+            className="w-full h-[25vh]  lg:w-[760px] lg:h-[60vh] sm:w-[608px] sm:h-auto"
             controls
           />
         </div>
