@@ -12,7 +12,7 @@ export const Video = ({ src }) => {
     fetchMovies();
   }, [path]);
   return (
-    <div className="relative w-full py-20 lg:px-10 px-8 bg-bgnetflix">
+    <div className="relative w-full py-20 lg:px-10 px-4 bg-bgnetflix">
       <div className="lg:w-[760px] lg:h-auto sm:w-[608px] sm:h-auto m-auto ">
         <div className="video-wrapper lg:w-[760px] lg:h-auto sm:w-[608px] sm:h-auto sm:border-[15px] border-[8px] border-greenuin ">
           <video

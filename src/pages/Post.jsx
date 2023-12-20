@@ -21,7 +21,6 @@ export const Post = () => {
       setRecommend(res.data.filter((item) => item._id !== path));
     };
     fetchMovies();
-    console.log(recommend);
   }, []);
   return (
     <main className="lg:flex ">
@@ -30,8 +29,13 @@ export const Post = () => {
         <p className="text-subtitle  text-wh mb-4 font-semibold flex justify-center">Tonton Juga!</p>
         {recommend.map((item, index) => {
           return (
-            <Link to={`/watch/${item._id}`} onClick={() => window.location.reload()}>
-              <div key={item._id} className="rekomendasi md:flex md: justify-center md:gap-9 md:flex-wrap lg:ml-0 ml-5">
+            <Link
+              key={item._id}
+              onClick={() => {
+                window.location.href = `/watch/${item._id}`;
+              }}
+            >
+              <div className="rekomendasi md:flex md:gap-9 md:flex-wrap lg:ml-0 ml-5">
                 <div className="border-t-[1px] border-gray-600">
                   <div className="judul mt-2 flex items-center">
                     <p className="border-[1px] py-1 px-3 rounded-md border-gray-200 mr-2">{index + 1}</p>
@@ -50,4 +54,3 @@ export const Post = () => {
     </main>
   );
 };
-// https://res.cloudinary.com/alfianmna/video/upload/v1699359550/Upin_Ipin_Dapur_Masak-Masak_Episode_Terbaru___Upin_Ipin_Terbaru_2023___Upin_Ipin_Musim_17_uiawpz.mp4

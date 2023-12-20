@@ -46,9 +46,9 @@ const Settings = () => {
         Swal.fire("Sukses!", "Data berhasil diperbarui.", "success");
         success = true;
       } catch (err) {
-        console.error("Error updating user:", err);
+        console.error(err);
         // Tampilkan pesan error menggunakan SweetAlert2
-        Swal.fire("Error", "Terjadi kesalahan saat melakukan update.", "error");
+        Swal.fire("Error", "Mohon masukkan data yang lebih unik.", "error");
       } finally {
         if (success) {
           window.location.reload();

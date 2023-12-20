@@ -59,18 +59,24 @@ export const Watchnow = () => {
           {" "}
           <div className="search flex p-7">
             <AiOutlineSearch className="sm:w-8 sm:h-8 w-6 h-6" />
-            <input onChange={(e) => setQuery(e.target.value.toLowerCase())} type="text" className="outline-none bg-transparent border-b-[1px] ml-5 sm:w-96 w-44 py-1 text-smtprimary " id="search" name="search" autoComplete="off" />
+            <input onChange={(e) => setQuery(e.target.value.toLowerCase())} type="text" className="outline-none bg-transparent border-b-[1px] ml-5 sm:w-96 w-full py-1 text-smtprimary " id="search" name="search" autoComplete="off" />
           </div>
           <div className=" pb-12">
             <p id="watch" className="font-bold text-subtitle px-8 py-5">
               Watch Now!
             </p>
-            <div className="img-container flex flex-wrap gap-4 justify-center items-center px-7  ">
+            <div className="img-container flex flex-wrap gap-4 justify-center items-center px-7">
               {loading ? (
-                movies
-                  .filter((movie) => movie.moviesName.toLowerCase().includes(query))
-                  .map((movie) => {
+                (() => {
+                  const filteredMovies = movies.filter((movie) => movie.moviesName.toLowerCase().includes(query));
+
+                  if (filteredMovies.length === 0) {
+                    return <p>Film tidak ditemukan.</p>;
+                  }
+
+                  return filteredMovies.map((movie) => {
                     const isSaved = savedMovies.includes(movie._id);
+
                     return (
                       <div key={movie._id} className="relative 2xl:w-80 sm:w-72 w-80 h-48 cursor-pointer">
                         <img src={movie.posterMovie} alt="thumbnail" className="object-cover w-full h-full rounded-xl" />
@@ -95,7 +101,8 @@ export const Watchnow = () => {
                         </div>
                       </div>
                     );
-                  })
+                  });
+                })()
               ) : (
                 <p>Waiting for the movie...</p>
               )}

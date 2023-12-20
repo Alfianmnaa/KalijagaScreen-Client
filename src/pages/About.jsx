@@ -1,9 +1,10 @@
 import React from "react";
+import bg from "../assets/about-img.png";
 
 const About = () => {
   return (
     <div>
-      <img src="../src/assets/about-img.png" alt="about-img" className="w-[100%] sm:h-auto h-[600px]  object-cover object-top" />
+      <img src={bg} alt="about-img" className="w-[100%] sm:h-auto h-[600px]  object-cover object-top" />
     </div>
   );
 };

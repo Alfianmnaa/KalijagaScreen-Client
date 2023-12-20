@@ -1,17 +1,18 @@
 import React from "react";
+import logo from "../assets/logo.png";
 import { AiFillLinkedin, AiFillGithub, AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   return (
     <>
       <footer className="footer relative bg-[#020C0C] pt-9 px-6 sm:pb-36 pb-24 sm:flex justify-around items-center text-white">
-        <img src="../src/assets/logo.png" alt="logo" className="w-44 sm:w-64 mb-5 cursor-pointer" />
-        <div className="desc-footer text-tprimary sm:flex">
+        <img src={logo} alt="logo" className="w-44 sm:w-64 mb-5 cursor-pointer" />
+        <div className="desc-footer sm:text-tprimary text-smtprimary sm:flex">
           <p className="mr-7 mb-3 hover:brightness-90 duration-150">
-            <a href="faq">FAQ</a>
+            <a href="/">Home</a>
           </p>
           <p className="mr-7 mb-3 hover:brightness-90 duration-150">
-            <a href="favorite">Mylist</a>
+            <a href="faq">FAQ</a>
           </p>
           <p className="mr-7 mb-3 hover:brightness-90 duration-150">
             <a href="about">About</a>
@@ -29,7 +30,7 @@ const Footer = () => {
           </a>
         </div>
       </footer>
-      <p className="relative text-center bg-[#020C0C] text-secondary py-5">Copyright 2023. KalijagaScreen</p>
+      <p className="relative sm:text-tprimary text-smtprimary text-center bg-[#020C0C] text-secondary py-5">Copyright 2023. KalijagaScreen</p>
     </>
   );
 };

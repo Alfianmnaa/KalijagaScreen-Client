@@ -6,6 +6,7 @@ import { FiLogOut } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { axiosInstance } from "../config";
+import logo from "../assets/logo.png";
 
 export const Navbar = () => {
   const [showNotifDropdown, setShowNotifDropdown] = useState(false);
@@ -72,10 +73,10 @@ export const Navbar = () => {
     <header className={navbarClasses}>
       <nav className=" text-primary h-full flex justify-between items-center">
         <div className="logo ml-5 flex items-center py-3  ">
-          <a href="">
-            <img src="../src/assets/logo.png" className="w-40 sm:w-64" alt="logo" />
+          <a href="/">
+            <img src={logo} className="w-40 sm:w-64" alt="logo" />
           </a>
-          <div className="nav-kiri hidden text-tprimary sm:ml-16 sm:flex items-center">
+          <div className="nav-kiri hidden sm:text-tprimary text-smtprimary sm:ml-16 sm:flex items-center">
             <Link to="/" className={`ml-4 ${isLinkActive("/") ? "text-greenuin" : ""}`}>
               Home
             </Link>
@@ -145,7 +146,7 @@ export const Navbar = () => {
       <div className={`fixed top-0 inset-x-0 h-auto bg-bgnetflix z-50 transform ${showMobileNav ? "translate-y-0" : "-translate-y-[109%]"} transition-transform duration-300 ease-in-out sm:hidden`}>
         {/* Close icon or back button could be placed here */}
         <AiOutlineClose className="text-white mt-5 w-5 h-5 absolute right-3" onClick={() => setShowMobileNav(false)} />
-        <div className="overflow-hidden nav-kiri mt-20 text-subtitle flex flex-col items-center justify-center p-4">
+        <div className="overflow-hidden nav-kiri mt-20 sm:text-tprimary text-smtprimary flex flex-col items-center justify-center p-4">
           <Link to="/" className="text-primary mb-4 duration-100 hover:brightness-90">
             Home
           </Link>
@@ -164,7 +165,7 @@ export const Navbar = () => {
             </Link>
           )}
           <a href="#" className="pt-8 pb-7">
-            <img src="../src/assets/logo.png" className="w-52 sm:w-64 " alt="logo" />
+            <img src={logo} className="w-52 sm:w-64 " alt="logo" />
           </a>
         </div>
       </div>

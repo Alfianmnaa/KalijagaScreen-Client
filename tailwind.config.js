@@ -17,6 +17,7 @@ export default {
         smsubtitle: "18px",
         tprimary: "18px",
         smtprimary: "15px",
+        xstprimary: "14px",
       },
     },
   },

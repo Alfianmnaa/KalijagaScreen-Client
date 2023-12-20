@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { axiosInstance } from "../config";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -32,7 +33,7 @@ const Register = () => {
   return (
     <div className="login flex items-center justify-center w-full h-[100vh] object-cover bg-[url('../src/assets/hero.jpg')]">
       <form onSubmit={handleRegister} className="cont-register rounded-3xl shadow-sm shadow-neutral-600 p-10 w-[95%] sm:w-[420px] sm:h-[500px] bg-black  text-primary">
-        <img src="../src/assets/logo.png" alt="logo" className="w-32 sm:w-48 mb-6 mx-auto" />
+        <img src={logo} alt="logo" className="w-32 sm:w-48 mb-6 mx-auto" />
         <input onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" className="block w-[95%] mx-auto p-3   rounded-md bg-bgnetflix mb-4" />
         <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="email" className="block w-[95%] mx-auto p-3   rounded-md bg-bgnetflix mb-4" />
         <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" className="block w-[95%] mx-auto p-3 rounded-md bg-bgnetflix" />

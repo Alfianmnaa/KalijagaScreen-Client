@@ -3,6 +3,7 @@ import { axiosInstance } from "../config";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import logo from "../assets/logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,6 @@ const Login = () => {
       setUser(res.data);
       console.log("login success");
       navigate("/");
-      window.location.reload();
     } catch (error) {
       setError(true);
       console.log(error);
@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <div className="login flex items-center justify-center w-full h-[100vh] object-cover bg-[url('../src/assets/hero.jpg')]">
       <form onSubmit={handleLogin} className="cont-login rounded-3xl shadow-sm shadow-neutral-600 p-10 m-3 mt-16 sm:w-[420px] sm:h-[500px] bg-black  text-primary">
-        <img src="../src/assets/logo.png" alt="logo" className="w-32 sm:w-48 mb-6 mx-auto" />
+        <img src={logo} alt="logo" className="w-32 sm:w-48 mb-6 mx-auto" />
         <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="email" className="block w-[95%] mx-auto p-3   rounded-md bg-bgnetflix mb-4" />
         <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" className="block w-[95%] mx-auto p-3 rounded-md bg-bgnetflix" />
         <button type="submit" className="block mt-12 border-[0.5px] border-yellowuin w-[95%] mx-auto p-3 rounded-md bg-greenuin hover:brightness-90 duration-150">
